@@ -56,7 +56,7 @@
 
     <!-- Choice -->
 
-    <string name="Choice_text_view">Selecciona en que presentacion desas tu fruta preparada, que consta de una ensalada agridulce refrescante con fruta y verdura de temporada.</string>
+    <string name="Choice_text_view">Selecciona en que presentacion deseas tu fruta preparada, que consta de una ensalada agridulce refrescante con fruta y verdura de temporada.</string>
 
     <string name="fruit_button">Vaso de fruta</string>
     <string name="gazpacho_button">Gazpacho Moreliano</string>
@@ -101,4 +101,113 @@
     <string name="order_button">ORDENAR</string>
 
     <!-- ********************************************* -->
+
+    <!-- English Choice -->
+
+    <string name="english_Choice_text_view">Select how you want to prepare your order, consisting of a sweet and sour salad with seasonal fruit and vegetables.</string>
+
+    <string name="english_fruit_button">fruit slice</string>
+    <string name="english_gazpacho_button">Gazpacho Moreliano</string>
+
+
+    <string name="english_gazpacho_toast">Gazpacho Moreliano</string>
+    <string name="english_fruit_toast">fruit slice</string>
+
+    <!-- ********************************************* -->
+
+    <!-- ********************************************* -->
+
+    <!--English ingredients -->
+
+    <string name="english_question_ingredients">Select the desired ingredients and press NEXT.</string>
+
+    <string name="english_next_button">next</string>
+
+    <string name="english_ingredients_toast">ingrédients choisis</string>
+
+    <!-- ********************************************* -->
+
+    <!-- English Size -->
+
+    <string name="english_question_price_size">Select size</string>
+
+    <!-- ********************************************* -->
+
+    <!-- English Takeaway -->
+
+    <string name="english_question_takeaway">Is that for here or to go?</string>
+
+    <string name="english_here_button">that is to stay</string>
+    <string name="english_takeaway_button">to take away</string>
+
+    <string name="english_here_toast">that is to stay</string>
+    <string name="english_takeaway_toast">to take away</string>
+
+    <!-- ********************************************* -->
+
+
+    <!-- English Order -->
+
+    <string name="english_details_label">Select ORDER to confirm the sales, delivery ticket to cashier\n\nor select BACK TO MAIN to back to choose again\n\nSale details:</string>
+
+    <string name="english_date">Date:</string>
+
+    <string name="english_home_button">BACK TO MAIN</string>
+    <string name="english_order_button">ORDER</string>
+
+    <!-- ********************************************* -->
+
+
+    <!-- French Choice -->
+
+    <string name="french_Choice_text_view">Choisissez comment vous souhaitez que votre commande est préparée, composé d une salade rafraîchissante aigre-douce avec des fruits et légumes de saison.</string>
+
+    <string name="french_fruit_button">tranches de fruits</string>
+    <string name="french_gazpacho_button">Gazpacho Moreliano</string>
+
+
+    <string name="french_gazpacho_toast">Gazpacho Moreliano</string>
+    <string name="french_fruit_toast">tranches de fruits</string>
+
+    <!-- ********************************************* -->
+
+    <!--French ingredients -->
+
+    <string name="french_question_ingredients">Sélectionnez les ingrédients souhaités et appuyez sur PROCHAIN.</string>
+
+    <string name="french_next_button">prochain</string>
+
+    <string name="french_ingredients_toast">selected ingredients</string>
+
+
+    <!-- ********************************************* -->
+
+    <!-- French Size -->
+
+    <string name="french_question_price_size">Sélectionnez la taille.</string>
+
+    <!-- ********************************************* -->
+
+    <!-- French Takeaway -->
+
+    <string name="french_question_takeaway">Il est de manger ici ou aller?</string>
+
+    <string name="french_here_button">manger ici</string>
+    <string name="french_takeaway_button">A emporter</string>
+
+    <string name="french_here_toast">manger ici</string>
+    <string name="french_takeaway_toast">A emporter</string>
+
+    <!-- ********************************************* -->
+
+    <!-- French Order -->
+
+    <string name="french_details_label">Sélectionnez ORDONNER pour confirmer les ventes, bon de livraison à destituer\n\nou sélectionnez RETOUR À LA pour sauvegarder de choisir à nouveau.\n\n Detalles vente:</string>
+
+    <string name="french_date">Date:</string>
+
+    <string name="french_home_button">RETOUR À LA</string>
+    <string name="french_order_button">ORDONNER</string>
+
+        <!-- ********************************************* -->
 </resources>
