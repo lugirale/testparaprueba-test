@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">Gazpacho</string>
+
+
+    <!--USB -->
+
+    <string name="btn_conn">Conectar impresora por USB</string>
+    <string name="btn_start">OK, impresora conectada, comenzar </string>
+
+    <string name="msg_getpermission">Conexion exitosa de impresora por USB </string>
+    <string name="msg_conn_state">El dispositivo USB no tiene acceso, porfavor re-conecta</string>
+    <string name="strLang">en</string>
+
+    <!-- ********************************************* -->
+
+    <!--ingredients -->
+
+    <string name="question_mix1">Opcion para poner nombre segun la fruta del dia GAZPACHO</string>
+    <string name="question_mix2">Opcion para poner nombre segun la fruta del dia FRUTA TROZOS GRANDES</string>
+
+    <string name="question_ingredients">Selecciona los ingredientes deseados y presiona CONTINUAR.</string>
+
+
+    <string name="next_button">Continuar</string>
+
+    <string name="ingredients_toast">Ingredientes seleccionados</string>
+
+
+    <!-- ********************************************* -->
+
+    <!--price -->
+
+    <string name="gazpacho_price">Precios de GAZPACHO</string>
+    <string name="fruit_price">Precios de FRUTA picada</string>
+
+    <!-- ********************************************* -->
+
+
+    <!--Language -->
+
+    <string name="big_toast">Gazpacho grande</string>
+    <string name="medium_toast">Gazpacho mediano</string>
+    <string name="small_toast">Gazpacho chico</string>
+
+    <string name="Spanish_button">Español</string>
+    <string name="English_button">English</string>
+    <string name="French_button">Français</string>
+
+    <string name="Spanish_toast">En español</string>
+    <string name="English_toast">English language</string>
+    <string name="French_toast">langue Français</string>
+
+
+    <!-- ********************************************* -->
+
+
+    <!-- Choice -->
+
+    <string name="Choice_text_view">Selecciona en que presentacion desas tu fruta preparada, que consta de una ensalada agridulce refrescante con fruta y verdura de temporada.</string>
+
+    <string name="fruit_button">Vaso de fruta</string>
+    <string name="gazpacho_button">Gazpacho Moreliano</string>
+
+
+    <string name="gazpacho_toast">Gazpacho Moreliano</string>
+    <string name="fruit_toast">Vaso de fruta</string>
+
+    <!-- ********************************************* -->
+
+
+    <!-- Size -->
+
+    <string name="small_hint">Ingresa precio tamaño chico.</string>
+    <string name="medium_hint">Ingresa precio tamaño medino.</string>
+    <string name="big_hint">Ingresa precio tamaño grande.</string>
+
+    <string name="question_price_size">Selecciona el tamaño.</string>
+
+    <!-- ********************************************* -->
+
+    <!-- Takeaway -->
+
+    <string name="question_takeaway">Es para comer aquí o es para llevar?</string>
+
+    <string name="here_button">Para comer aqui</string>
+    <string name="takeaway_button">Es para llevar</string>
+
+    <string name="here_toast">para aqui</string>
+    <string name="takeaway_toast">para llevar</string>
+
+    <!-- ********************************************* -->
+
+
+    <!-- Order -->
+
+    <string name="details_label">Selecciona ORDENAR para confirmar la venta entrega el ticket al cajero\n\no Selecciona REGRESAR para volver a escoger nuevamente\n\nDetalles de la venta:</string>
+
+    <string name="date">Fecha:</string>
+
+    <string name="home_button">REGRESAR</string>
+    <string name="order_button">ORDENAR</string>
+
+    <!-- ********************************************* -->
+</resources>
