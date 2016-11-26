@@ -276,7 +276,7 @@ public class OrderFragment extends Fragment {
 
                     cmd[2] |= 0x10;
                     usbCtrl.sendByte(cmd, dev);
-                    usbCtrl.sendMsg("------------------------------\n", "GBK", dev);
+                    usbCtrl.sendMsg("-------------------------------\n", "GBK", dev);
                     cmd[2] |= 0x10;
                 }
 
