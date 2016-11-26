@@ -69,6 +69,80 @@
             android:label="@string/app_name" >
         </activity>
 
+/************************ENGLISH***********************************************/
+
+        <activity
+            android:name=".EnglishChoiceProductActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".EnglishIngredientsGazpachoActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".EnglishIngredientsFruitActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".EnglishSizeGazpachoActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".EnglishSizeFruitActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".EnglishTakeawayActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".EnglishOrderActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        /************************FRENCH***********************************************/
+
+        <activity
+            android:name=".FrenchChoiceProductActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".FrenchIngredientsGazpachoActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".FrenchIngredientsFruitActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".FrenchSizeGazpachoActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".FrenchSizeFruitActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".FrenchTakeawayActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".FrenchOrderActivity"
+            android:label="@string/app_name" >
+        </activity>
+
         <activity android:name="com.prueba.lgramir.Gazpchos.UsbConnectActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
