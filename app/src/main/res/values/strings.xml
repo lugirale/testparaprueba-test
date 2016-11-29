@@ -106,7 +106,7 @@
 
     <string name="english_Choice_text_view">Select how you want to prepare your order, consisting of a sweet and sour salad with seasonal fruit and vegetables.</string>
 
-    <string name="english_fruit_button">fruit slice</string>
+    <string name="english_fruit_button">Slice fruit</string>
     <string name="english_gazpacho_button">Gazpacho Moreliano</string>
 
 
@@ -177,7 +177,7 @@
 
     <string name="french_next_button">prochain</string>
 
-    <string name="french_ingredients_toast">selected ingredients</string>
+    <string name="french_ingredients_toast">ingrédients sélectionnés</string>
 
 
     <!-- ********************************************* -->

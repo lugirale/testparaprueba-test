@@ -80,7 +80,7 @@ public class UsbConnectActivity extends Activity {
         public void onClick(View v) {
             if( v == btn_conn ){
 
-/*
+
                 usbCtrl.close();
                 int  i = 0;
                 for( i = 0 ; i < 6 ; i++ ){
@@ -99,11 +99,11 @@ public class UsbConnectActivity extends Activity {
                         btn_conn.setEnabled(false);
                     }
                 }
-*/
 
-                Intent i = new Intent(UsbConnectActivity.this, FruitDayGazpachoActivity.class);
+
+/*                Intent i = new Intent(UsbConnectActivity.this, FruitDayGazpachoActivity.class);
                 startActivity(i);
-
+*/
             }else if( v == btn_test ){
                 Intent i = new Intent(UsbConnectActivity.this, FruitDayGazpachoActivity.class);
                 startActivity(i);

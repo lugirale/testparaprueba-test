@@ -1,6 +1,5 @@
 package com.prueba.lgramir.Gazpchos;
 
-
 import android.content.Intent;
 import android.hardware.usb.UsbDevice;
 import android.os.Bundle;
@@ -23,7 +22,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class OrderFragment extends Fragment {
+public class OrderEnglishFragment extends Fragment {
 
     private Button mHomeButton;
     private Button mOrderButton = null;
@@ -53,7 +52,7 @@ public class OrderFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_order, parent, false);
+        View v = inflater.inflate(R.layout.fragment_order_english, parent, false);
 
         usbCtrl = new UsbController(getActivity(),mHandler);
         u_infor = new int[6][2];
@@ -80,12 +79,13 @@ public class OrderFragment extends Fragment {
 
         mCalendar = Calendar.getInstance();
         final Date date = mCalendar.getTime();
-        Locale locES = new Locale("es","ES");
-        DateFormat dfES = DateFormat.getDateInstance(DateFormat.FULL, locES);
+        Locale locEN = new Locale("en","EN");
+        DateFormat dfEN = DateFormat.getDateInstance(DateFormat.FULL, locEN);
+
         DateFormat df = DateFormat.getTimeInstance();
         df.setTimeZone(TimeZone.getDefault());
         final String gmtTime = df.format(new Date());
-        final String gmtTime2 =dfES.format(date);
+        final String gmtTime2 =dfEN.format(date);
 
         /***********************************************************************************
          CHOICE
@@ -96,14 +96,15 @@ public class OrderFragment extends Fragment {
         mSize= Singleton.getInstance().getSize();
         mTakeaway= Singleton.getInstance().getAnswerTakaway();
 
-        mChoiceView.setText("Fecha: "+dfES.format(date)+" " +gmtTime +"\n\n"+mChoice +", "+ mSize +", "+ mTakeaway);
+        mChoiceView.setText("Date: "+dfEN.format(date)+" " +gmtTime +"\n\n"+mChoice +", "+ mSize +" size"+", "+ mTakeaway);
+
 
         /***********************************************************************************
          INGREDIENTS
          ***********************************************************************************/
 
         mIngredientsView = (TextView) v.findViewById(R.id.ingredients_view);
-        mIngredients = Singleton.getInstance().getIngredients();
+        mIngredients = Singleton.getInstance().getIngredientsEnglish();
         mPrice= Singleton.getInstance().getPrice();
 
         StringBuilder builder = new StringBuilder();
@@ -111,9 +112,9 @@ public class OrderFragment extends Fragment {
             builder.append(s+"\n");
         }
         if(mIngredients.size() == 0){
-            mIngredientsView.setText("No seleccionaste ingredientes!? presiona regresar para seleccionar ingredientes");
+            mIngredientsView.setText("Did not select ingredients!?. Press back to select ingredients");
         }else
-            mIngredientsView.setText("ingredientes: \n" + builder.toString()+"\n"+mPrice);
+            mIngredientsView.setText("selected ingredients: \n" + builder.toString()+"\n"+"Total price: $ "+mPrice  +" mexican pesos 00/100 M.N)");
 
 
         /***********************************************************************************/
@@ -135,19 +136,19 @@ public class OrderFragment extends Fragment {
             public void onClick(View v) {
 
                 byte isHasPaper;
-                if( v == mOrderButton ){
+                if( v == mOrderButton ) {
                     usbCtrl.close();
-                    int  i = 0;
-                    for( i = 0 ; i < 6 ; i++ ){
-                        dev = usbCtrl.getDev(u_infor[i][0],u_infor[i][1]);
-                        if(dev != null)
+                    int i = 0;
+                    for (i = 0; i < 6; i++) {
+                        dev = usbCtrl.getDev(u_infor[i][0], u_infor[i][1]);
+                        if (dev != null)
                             break;
                     }
 
-                    if( dev != null ){
-                        if( !(usbCtrl.isHasPermission(dev))){
+                    if (dev != null) {
+                        if (!(usbCtrl.isHasPermission(dev))) {
                             usbCtrl.getPermission(dev);
-                        }else{
+                        } else {
                             Toast.makeText(getActivity(), getString(R.string.msg_getpermission),
                                     Toast.LENGTH_SHORT).show();
                             //btn_test.setEnabled(true);
@@ -156,11 +157,18 @@ public class OrderFragment extends Fragment {
                     }
 
                     String fecha = "";
+                    String fecha2 = "";
                     String producto = "";
+                    String producto2 = "";
                     String tamaño = "";
+                    String tamaño2 = "";
                     String parallevar = "";
+                    String parallevar2 = "";
                     String ingredientes = "";
+                    String ingredientes2 = "";
                     String precio = "";
+                    String precio2 = "";
+
                     String lang = getString(R.string.strLang);
                     byte[] cmd = new byte[3];
                     cmd[0] = 0x1b;
@@ -168,14 +176,14 @@ public class OrderFragment extends Fragment {
 
 
                     isHasPaper = usbCtrl.revByte(dev);
-                    if( isHasPaper == 0x38 ){
+                    if (isHasPaper == 0x38) {
                         Toast.makeText(getActivity(), "la impresora no tiene papel",
                                 Toast.LENGTH_SHORT).show();
                         return;
                     }
 
 
-                    if((lang.compareTo("en")) == 0){
+                    if ((lang.compareTo("en")) == 0) {
 
                         cmd[2] |= 0x10;
                         usbCtrl.sendByte(cmd, dev);
@@ -183,7 +191,7 @@ public class OrderFragment extends Fragment {
 
                         cmd[2] &= 0xEF;
                         usbCtrl.sendByte(cmd, dev);
-                        fecha = "Fecha: "+ gmtTime2 +" "+gmtTime+"\n" ;
+                        fecha = "Date: " + gmtTime2 + " " + gmtTime + "\n";
                         usbCtrl.sendMsg(fecha, "GBK", dev);
 
                         cmd[2] &= 0xEF;
@@ -204,21 +212,21 @@ public class OrderFragment extends Fragment {
                         cmd[2] &= 0xEF;
                         usbCtrl.sendByte(cmd, dev);
                         StringBuilder builder = new StringBuilder();
-                        for (String s: mIngredients) {
-                            builder.append(s+"\n");
+                        for (String s : mIngredients) {
+                            builder.append(s + "\n");
                         }
-                        if(mIngredients.size() == 0){
-                            ingredientes="No seleccionaste ingredientes!? presiona regresar para seleccionar ingredientes";
+                        if (mIngredients.size() == 0) {
+                            ingredientes = "Did not select ingredients!?. Press back to select ingredients";
                             usbCtrl.sendMsg(ingredientes, "GBK", dev);
 
-                        }else {
-                            ingredientes = "ingredientes: \n\n" + builder.toString();
+                        } else {
+                            ingredientes = "selected ingredients: \n\n" + builder.toString();
                             usbCtrl.sendMsg(ingredientes, "GBK", dev);
                         }
 
                         cmd[2] &= 0xEF;
                         usbCtrl.sendByte(cmd, dev);
-                        precio = mPrice;
+                        precio = "Total price: $ "+mPrice +" mexican pesos 00/100 M.N)";
                         usbCtrl.sendMsg(precio, "GBK", dev);
 
                         cmd[2] |= 0x10;
@@ -232,50 +240,155 @@ public class OrderFragment extends Fragment {
                         cmd[2] &= 0xEF;
                         usbCtrl.sendByte(cmd, dev);
 
-                        fecha = "Fecha: "+ gmtTime2 +" "+gmtTime+"\n" ;
-                        usbCtrl.sendMsg(fecha, "GBK", dev);
+                        /**********************************************************************************/
+                        Locale locES = new Locale("es","ES");
+                        DateFormat dfES = DateFormat.getDateInstance(DateFormat.FULL, locES);
+                        final String gmtTime2 =dfES.format(date);
+                        fecha2 = "Fecha: " + gmtTime2 + " " + gmtTime + "\n";
+
+                        usbCtrl.sendMsg(fecha2, "GBK", dev);
+
+                        /**********************************************************************************/
 
                         cmd[2] &= 0xEF;
                         usbCtrl.sendByte(cmd, dev);
-                        producto = mChoice;
-                        usbCtrl.sendMsg(producto, "GBK", dev);
+
+                        producto2 = mChoice.replace("Slice fruit", "Vaso de fruta");
+
+                        usbCtrl.sendMsg(producto2, "GBK", dev);
+
+                        /**********************************************************************************/
 
                         cmd[2] &= 0xEF;
                         usbCtrl.sendByte(cmd, dev);
-                        tamaño = mSize;
-                        usbCtrl.sendMsg(tamaño, "GBK", dev);
 
-                        cmd[2] &= 0xEF;
-                        usbCtrl.sendByte(cmd, dev);
-                        parallevar = mTakeaway;
-                        usbCtrl.sendMsg(parallevar, "GBK", dev);
-
-                        cmd[2] &= 0xEF;
-                        usbCtrl.sendByte(cmd, dev);
-                        StringBuilder builder2 = new StringBuilder();
-                        for (String s: mIngredients) {
-                            builder2.append(s+"\n");
+                        if(mSize.contains("small")){
+                            tamaño2 = mSize.replace("small", "chico");
+                        }else if(mSize.contains("medium")){
+                            tamaño2 = mSize.replace("medium", "mediano");
+                        }else if(mSize.contains("big")){
+                            tamaño2 = mSize.replace("big", "grande");
                         }
-                        if(mIngredients.size() == 0){
-                            ingredientes="No seleccionaste ingredientes!? presiona regresar para seleccionar ingredientes";
+
+                        usbCtrl.sendMsg(tamaño2, "GBK", dev);
+
+                        /**********************************************************************************/
+
+                        cmd[2] &= 0xEF;
+                        usbCtrl.sendByte(cmd, dev);
+
+                        if(mTakeaway.contains("to take away")){
+                            parallevar2 = mTakeaway.replace("to take away", "para llevar");
+                        }else if(mTakeaway.contains("that is to stay")){
+                            parallevar2 = mTakeaway.replace("that is to stay","para comer aqui");
+                        }
+
+                        usbCtrl.sendMsg(parallevar2, "GBK", dev);
+
+                        /**********************************************************************************/
+
+                        cmd[2] &= 0xEF;
+                        usbCtrl.sendByte(cmd, dev);
+
+                        ArrayList<String> items = Singleton.getInstance().getIngredientsEnglish();
+                        ArrayList<String> copy = new ArrayList<String>();
+                        copy.addAll(items);
+
+                        for (String item : copy) {
+
+                            if (item.contains("Jicama")) {
+                                int a = copy.indexOf("Jicama");
+                                copy.set(a, "Jicama");
+                            }
+                            else if (item.contains("cucumber")) {
+                                int b = copy.indexOf("cucumber");
+                                copy.set(b,"Pepino");
+                            }
+                            else if (item.contains("Sandia")) {
+                                int c = copy.indexOf("Sandia");
+                                copy.set(c,"Sandia");
+                            }
+                            else if (item.contains("Mango")) {
+                                int d = copy.indexOf("Mango");
+                                copy.set(d,"Mango");
+                            }
+                            else if (item.contains("pineapple")) {
+                                int e = copy.indexOf("pineapple");
+                                copy.set(e,"Piña");
+                            }
+                            else if (item.contains("Pawpaw")) {
+                                int f = copy.indexOf("Pawpaw");
+                                copy.set(f,"Papaya");
+                            }
+                            else if (item.contains("Cantaloupe")) {
+                                int g = copy.indexOf("Cantaloupe");
+                                copy.set(g,"Melon");
+                            }
+                            else if (item.contains("Orange")) {
+                                int h = copy.indexOf("Orange");
+                                copy.set(h,"Naranja");
+                            }
+                            else if (item.contains("Tuna from nopal")) {
+                                int j = copy.indexOf("Tuna from nopal");
+                                copy.set(j,"Tuna");
+                            }
+                            else if (item.contains("Coconut")) {
+                                int k = copy.indexOf("Coconut");
+                                copy.set(k,"Coco");
+                            }
+                            else if (item.contains("Orange juice")) {
+                                int l = copy.indexOf("Orange juice");
+                                copy.set(l,"Jugo de naranja");
+                            }
+                            else if (item.contains("Lemon juice")) {
+                                int m = copy.indexOf("Lemon juice");
+                                copy.set(m,"Limon");
+                            }
+                            else if (item.contains("Salt")) {
+                                int n = copy.indexOf("Salt");
+                                copy.set(n,"Sal");
+                            }
+                            else if (item.contains("Chili powder")) {
+                                int o = copy.indexOf("Chili powder");
+                                copy.set(o,"Chile en polvo");
+                            }
+                            else if (item.contains("Hot sauce")) {
+                                int p = copy.indexOf("Hot sauce");
+                                copy.set(p,"Chile de botella");
+                            }
+                            else if (item.contains("Grated cheese")) {
+                                int q = copy.indexOf("Grated cheese");
+                                copy.set(q,"Queso");
+                            }
+                        }
+
+                        StringBuilder builder2 = new StringBuilder();
+                        for (String s : copy) {
+                            builder2.append(s + "\n");
+                        }
+                        if (copy.size() == 0) {
+                            ingredientes = "No seleccionaste ingredientes!? presiona regresar para seleccionar ingredientes";
                             usbCtrl.sendMsg(ingredientes, "GBK", dev);
 
-                        }else {
+                        } else {
                             ingredientes = "ingredientes: \n\n" + builder2.toString();
                             usbCtrl.sendMsg(ingredientes, "GBK", dev);
                         }
 
+                        /**********************************************************************************/
 
                         cmd[2] &= 0xEF;
                         usbCtrl.sendByte(cmd, dev);
-                        precio = mPrice;
-                        usbCtrl.sendMsg(precio, "GBK", dev);
+
+                        precio2 = "Total a pagar: $ "+mPrice + " pesos 00/100 M.N)";
+                        usbCtrl.sendMsg(precio2, "GBK", dev);
                     }
 
                     cmd[2] |= 0x10;
                     usbCtrl.sendByte(cmd, dev);
                     usbCtrl.sendMsg("-------------------------------\n", "GBK", dev);
                     cmd[2] |= 0x10;
+
                 }
 
                 Intent intent = new Intent(getActivity(), LanguageActivity.class);

@@ -38,7 +38,7 @@ public class LanguageFragment extends Fragment {
         mEnglishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), EnglishChoiceProductActivity.class);
+                Intent i = new Intent(getActivity(), ChoiceProductEnglishActivity.class);
                 startActivity(i);
                 Toast.makeText(getActivity(), R.string.English_toast, Toast.LENGTH_SHORT).show();
             }
@@ -48,7 +48,7 @@ public class LanguageFragment extends Fragment {
         mFrenchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), FrenchChoiceProductActivity.class);
+                Intent i = new Intent(getActivity(), ChoiceProductFrenchActivity.class);
                 startActivity(i);
                 Toast.makeText(getActivity(), R.string.French_toast, Toast.LENGTH_SHORT).show();
             }
