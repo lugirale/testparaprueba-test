@@ -42,7 +42,9 @@ public class IngredientsGazpachoFragment  extends Fragment {
 
         mcheckList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
+
         ArrayList<String> items =  Singleton.getInstance().getGazpachoIngredients();
+
 
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.rowlayout, R.id.txt_ingredients,items);
         mcheckList.setAdapter(adapter);

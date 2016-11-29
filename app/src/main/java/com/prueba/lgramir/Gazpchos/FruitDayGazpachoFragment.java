@@ -45,7 +45,6 @@ public class FruitDayGazpachoFragment extends Fragment {
 
         String[] items = {"Jicama","Pepino","Sandia","Mango","Piña","Papaya","Melon","Naranja","Tuna","Coco","Jugo de naranja","Limon" ,"Sal","Chile en polvo","Chile de botella","Queso"};
 
-
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.rowlayout, R.id.txt_ingredients,items);
         mcheckList.setAdapter(adapter);
 

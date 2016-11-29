@@ -1,5 +1,6 @@
 package com.prueba.lgramir.Gazpchos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FrenchChoiceProductFragment extends Fragment {
+public class ChoiceProductEnglishFragment extends Fragment {
 
     private Button mFruitButton;
     private Button  mGazpachoButton;
@@ -25,7 +26,7 @@ public class FrenchChoiceProductFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_french_choice_product, parent, false);
+        View v = inflater.inflate(R.layout.fragment_english_choice_product, parent, false);
 
         mQuestionTextView = (TextView) v.findViewById(R.id.Choice_text_view);
 
@@ -36,9 +37,9 @@ public class FrenchChoiceProductFragment extends Fragment {
         mFruitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Singleton.getInstance().setChoice("tranche de fruits");
-                // Intent intent = new Intent(getActivity(), EnglishIngredientsFruitActivity.class);
-                //startActivity(intent);
+                Singleton.getInstance().setChoice("Slice fruit");
+                Intent intent = new Intent(getActivity(), IngredientsFruitEnglishActivity.class);
+                startActivity(intent);
                 Toast.makeText(getActivity(),R.string.fruit_toast, Toast.LENGTH_SHORT).show();
             }
 
@@ -50,8 +51,8 @@ public class FrenchChoiceProductFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Singleton.getInstance().setChoice("Gazpcho Moreliano");
-                //Intent intent = new Intent(getActivity(), EnglishIngredientsGazpachoActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getActivity(), IngredientsGazpachoEnglishActivity.class);
+                startActivity(intent);
                 Toast.makeText(getActivity(),R.string.gazpacho_toast, Toast.LENGTH_SHORT).show();
             }
 
@@ -67,4 +68,3 @@ public class FrenchChoiceProductFragment extends Fragment {
 
 
 }
-

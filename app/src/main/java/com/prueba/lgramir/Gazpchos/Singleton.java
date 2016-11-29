@@ -23,6 +23,8 @@ public class Singleton {
     private String mAnswerTakaway;
 
     private ArrayList<String> mIngredients;
+    private ArrayList<String> mIngredientsFrench;
+    private ArrayList<String> mIngredientsEnglish;
 
     private ArrayList<String> mFruitIngredients;
     private ArrayList<String> mGazpachoIngredients;
@@ -131,27 +133,47 @@ public class Singleton {
 
     /*******************************************************/
 
-    public ArrayList<String> getIngredients() {return mIngredients;}
-
     public void setIngredients(ArrayList<String> ingredients) {
         mIngredients = ingredients;
     }
 
+    public ArrayList<String> getIngredients() {
+        return mIngredients;
+    }
+
+    /*******************************************************/
+
+    public void setGazpachoIngredients(ArrayList<String> gazpachoIngredients) {
+        mGazpachoIngredients = gazpachoIngredients;
+    }
+
+    public void setFruitIngredients(ArrayList<String> fruitIngredients) {
+        mFruitIngredients = fruitIngredients;
+    }
 
     public ArrayList<String> getFruitIngredients() {
         return mFruitIngredients;
-    }
-
-    public void setFruitIngredients(ArrayList<String> ingredients2) {
-        mFruitIngredients = ingredients2;
     }
 
     public ArrayList<String> getGazpachoIngredients() {
         return mGazpachoIngredients;
     }
 
-    public void setGazpachoIngredients(ArrayList<String> gazpachoIngredients) {
-        mGazpachoIngredients = gazpachoIngredients;
+    /*******************************************************/
+
+    public ArrayList<String> getIngredientsFrench() {
+        return mIngredientsFrench;
     }
 
+    public void setIngredientsFrench(ArrayList<String> ingredientsFrench) {
+        mIngredientsFrench = ingredientsFrench;
+    }
+
+    public ArrayList<String> getIngredientsEnglish() {
+        return mIngredientsEnglish;
+    }
+
+    public void setIngredientsEnglish(ArrayList<String> ingredientsEnglish) {
+        mIngredientsEnglish = ingredientsEnglish;
+    }
 }

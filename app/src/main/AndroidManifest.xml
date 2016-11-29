@@ -72,74 +72,74 @@
 /************************ENGLISH***********************************************/
 
         <activity
-            android:name=".EnglishChoiceProductActivity"
+            android:name=".ChoiceProductEnglishActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".EnglishIngredientsGazpachoActivity"
+            android:name=".IngredientsGazpachoEnglishActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".EnglishIngredientsFruitActivity"
+            android:name=".IngredientsFruitEnglishActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".EnglishSizeGazpachoActivity"
+            android:name=".SizeGazpachoEnglishActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".EnglishSizeFruitActivity"
+            android:name=".SizeFruitEnglishActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".EnglishTakeawayActivity"
+            android:name=".TakeawayEnglishActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".EnglishOrderActivity"
+            android:name=".OrderEnglishActivity"
             android:label="@string/app_name" >
         </activity>
 
         /************************FRENCH***********************************************/
 
         <activity
-            android:name=".FrenchChoiceProductActivity"
+            android:name=".ChoiceProductFrenchActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".FrenchIngredientsGazpachoActivity"
+            android:name=".IngredientsGazpachoFrenchActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".FrenchIngredientsFruitActivity"
+            android:name=".IngredientsFruitFrenchActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".FrenchSizeGazpachoActivity"
+            android:name=".SizeGazpachoFrenchActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".FrenchSizeFruitActivity"
+            android:name=".SizeFruitFrenchActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".FrenchTakeawayActivity"
+            android:name=".TakeawayFrenchActivity"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".FrenchOrderActivity"
+            android:name=".OrderFrenchActivity"
             android:label="@string/app_name" >
         </activity>
 
