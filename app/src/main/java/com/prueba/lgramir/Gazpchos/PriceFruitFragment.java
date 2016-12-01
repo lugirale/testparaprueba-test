@@ -34,8 +34,16 @@ public class PriceFruitFragment extends Fragment {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), LanguageActivity.class);
-                startActivity(intent);
+
+                String priceB = mBigField.getText().toString();
+                String priceM = mMediumField.getText().toString();
+                String priceS = mSmallField.getText().toString();
+
+                if(priceB != null && priceB.length() > 0 && priceM !=null && priceB.length() > 0 && priceS !=null && priceS.length() > 0){
+                    Intent intent = new Intent(getActivity(), LanguageActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
 

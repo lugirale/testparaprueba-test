@@ -1,6 +1,7 @@
 package com.prueba.lgramir.Gazpchos;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -41,6 +42,14 @@ Use it before super.onCreate(savedInstanceState);
                     .commit();
         }
 
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, LanguageActivity.class);
+        finish(); // to simulate "restart" of the activity.
+        startActivity(intent);
     }
 
 

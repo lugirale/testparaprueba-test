@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:textSize="50dp"
         android:layout_margin="16dp"
+        android:inputType="number"
         android:hint="@string/small_hint"/>
 
     <EditText
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:textSize="50dp"
         android:layout_margin="16dp"
+        android:inputType="number"
         android:hint="@string/medium_hint"/>
 
     <EditText
@@ -37,6 +39,7 @@
         android:layout_height="wrap_content"
         android:textSize="50dp"
         android:layout_margin="16dp"
+        android:inputType="number"
         android:hint="@string/big_hint"/>
 
     <LinearLayout

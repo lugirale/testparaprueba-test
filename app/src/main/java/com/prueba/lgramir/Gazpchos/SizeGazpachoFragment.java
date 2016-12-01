@@ -3,6 +3,7 @@ package com.prueba.lgramir.Gazpchos;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,7 +77,15 @@ public class SizeGazpachoFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), LanguageActivity.class);
+                // finish(); // to simulate "restart" of the activity.
+                startActivity(intent);
+            }
+        });
         return v;
     }
 
