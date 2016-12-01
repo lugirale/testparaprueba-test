@@ -34,8 +34,15 @@ public class PriceGazpachoFragment extends Fragment {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), FruitDayFruitActivity.class);
-                startActivity(intent);
+
+                String priceB = mBigField.getText().toString();
+                String priceM = mMediumField.getText().toString();
+                String priceS = mSmallField.getText().toString();
+
+                if(priceB != null && priceB.length() > 0 && priceM !=null && priceB.length() > 0 && priceS !=null && priceS.length() > 0){
+                        Intent intent = new Intent(getActivity(), FruitDayFruitActivity.class);
+                        startActivity(intent);
+                }
             }
         });
 
@@ -49,6 +56,7 @@ public class PriceGazpachoFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Singleton.getInstance().setSmallGazpacho(s.toString());
+
             }
 
             @Override
@@ -93,6 +101,7 @@ public class PriceGazpachoFragment extends Fragment {
             public void afterTextChanged(Editable s) {
             }
         });
+
 
         return v;
     }

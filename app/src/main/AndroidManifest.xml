@@ -11,12 +11,13 @@
 
         <activity
             android:name=".FruitDayGazpachoActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
 
         <activity
             android:name=".FruitDayFruitActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+        >
         </activity>
 
         <activity
@@ -31,17 +32,20 @@
 
         <activity
             android:name=".LanguageActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            >
         </activity>
 
         <activity
             android:name=".ChoiceProductActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            >
         </activity>
 
         <activity
             android:name=".IngredientsGazpachoActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            >
         </activity>
 
         <activity
